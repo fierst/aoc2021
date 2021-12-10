@@ -1,0 +1,67 @@
+PATTERN:
+ AAAA
+F    B
+F    B
+F    B
+ GGGG
+E    C
+E    C
+E    C
+ DDDD 
+
+INPUT:
+acedgfb cdfbe gcdfa fbcad dab cefabd cdfgeb eafb cagedb ab | cdfeb fcadb cdfeb cdbaf
+
+acedgfb [abcdefg] 	- 8
+ab 		[ab]		- 1
+dab 	[abd]		- 7
+eafb 	[abef]		- 4
+
+count digits missing one of the '1' segments (a or b)
+	- digit '2' is the only one missing one of them:
+
+gcdfa   [acdfg]		- 2
+
+diff 1 and 7 to get A:
+(A = d)
+
+that means we solved for C
+(C = b)
+
+that also means we solved for B
+(B = a)
+
+3 is only one segment away from 2
+
+fbcad 	[abcdf]		- 3
+
+we know the difference in 2 is segment E
+E = g
+
+5 is only one segment away from 3
+
+cdfbe 	[bcdef]	 	- 5
+
+we know the difference in 5 is segment F
+F = e
+
+we can then solve for 0
+
+cagedb 	[abcdeg]	- 0
+
+then we know segment D
+D = c
+
+The missing segment is f
+
+now we know the rest
+
+ dddd
+e    a
+e    a
+e    a
+ ffff
+g    b
+g    b
+g    b
+ cccc  
